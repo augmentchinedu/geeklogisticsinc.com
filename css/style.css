@@ -62,7 +62,7 @@ theme.
 	
 
 */
-@import url("../../css2.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
 * {
   outline: none !important;
 }
@@ -548,7 +548,7 @@ button[type="submit"] i {
   transition: all .30s ease-in-out;
 }
 .preloader img {
-  height: 100px;
+  height: 50px;
   display: inline-block;
   animation: fadeup 0.30s;
 }
@@ -616,6 +616,7 @@ button[type="submit"] i {
   align-items: center;
   overflow-y: auto;
   height: 100%;
+  font-size: medium;
 }
 .side-widget .logo {
   width: 100%;
@@ -623,7 +624,7 @@ button[type="submit"] i {
   margin-bottom: 40px;
 }
 .side-widget .logo img {
-  height: 90px;
+  height: 70px;
 }
 .side-widget .show-mobile {
   display: none;
@@ -727,6 +728,7 @@ button[type="submit"] i {
   display: block;
   margin-bottom: 20px;
   margin-top: 20px;
+  font-size: medium;
 }
 .side-widget .site-menu ul {
   width: 100%;
@@ -863,7 +865,7 @@ button[type="submit"] i {
   display: block;
 }
 .navbar .inner .logo a img {
-  height: 90px;
+  height: 55px;
   display: inline-block;
 }
 .navbar .inner .custom-menu {
@@ -3118,7 +3120,7 @@ button[type="submit"] i {
   }
 
   .side-widget .hide-mobile {
-    display: none;
+    display: block;
   }
 
   .side-widget .show-mobile {
