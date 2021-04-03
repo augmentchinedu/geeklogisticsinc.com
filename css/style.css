@@ -865,7 +865,7 @@ button[type="submit"] i {
   display: block;
 }
 .navbar .inner .logo a img {
-  height: 55px;
+  height: 80px;
   display: inline-block;
 }
 .navbar .inner .custom-menu {
@@ -2943,7 +2943,7 @@ button[type="submit"] i {
   margin-bottom: 30px;
 }
 .footer .logo img {
-  height: 55px;
+  height: 80px;
   display: inline-block;
 }
 .footer .widget-title {
