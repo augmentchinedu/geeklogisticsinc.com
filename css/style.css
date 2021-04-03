@@ -548,7 +548,7 @@ button[type="submit"] i {
   transition: all .30s ease-in-out;
 }
 .preloader img {
-  height: 50px;
+  height: 100px;
   display: inline-block;
   animation: fadeup 0.30s;
 }
@@ -863,7 +863,7 @@ button[type="submit"] i {
   display: block;
 }
 .navbar .inner .logo a img {
-  height: 55px;
+  height: 90px;
   display: inline-block;
 }
 .navbar .inner .custom-menu {
