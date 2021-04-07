@@ -2936,7 +2936,7 @@ button[type="submit"] i {
   flex-wrap: wrap;
   background: #212223;
   color: #fff;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 .footer .logo {
   display: inline-block;
@@ -3005,7 +3005,7 @@ button[type="submit"] i {
   display: flex;
   flex-wrap: wrap;
   padding: 40px 0;
-  margin-top: 60px;
+  margin-top: 0px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 14px;
 }
