@@ -45,6 +45,8 @@
   <link rel="stylesheet" href="css/fancybox.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
 </head>
 
 <body>
@@ -155,7 +157,7 @@
         <!-- end col-12 -->
         <div class="col-lg-5 col-md-6">
           <div class="contact-box" style="padding: 45px">
-            <h5>USA Office</h5>
+            <h5>USA OFFICE</h5>
             <address>
               473 Mundet Place SN412391, Hillside, New Jersey<br>
               Zip code: 07205<br>
@@ -211,28 +213,31 @@
 
         <div class="col-12">
           <div class="contact-form">
-            <div class="row inner">
-              <div class="form-group col-lg-4">
-                <input type="text" placeholder="Complate Name">
+            <form action="sendMail.php" method="GET">
+              <div class="row inner">
+                <div class="form-group col-lg-4">
+                  <input type="text" placeholder="Complate Name" name="name">
+                </div>
+                <!-- end form-group -->
+                <div class="form-group col-lg-4 col-md-6">
+                  <input type="text" placeholder="Email Address" name="email">
+                </div>
+                <!-- end form-group -->
+                <div class="form-group col-lg-4 col-md-6">
+                  <input type="text" placeholder="Phone No" name="phone">
+                </div>
+                <!-- end form-group -->
+                <div class="form-group col-12">
+                  <textarea placeholder="Message" name="message"></textarea>
+                </div>
+                <!-- end form-group -->
+                <div class="form-group col-12">
+                  <input type="submit" value="SEND MESSAGE">
+                </div>
+                <!-- end form-group -->
               </div>
-              <!-- end form-group -->
-              <div class="form-group col-lg-4 col-md-6">
-                <input type="text" placeholder="Email Address">
-              </div>
-              <!-- end form-group -->
-              <div class="form-group col-lg-4 col-md-6">
-                <input type="text" placeholder="Phone No">
-              </div>
-              <!-- end form-group -->
-              <div class="form-group col-12">
-                <textarea placeholder="Message"></textarea>
-              </div>
-              <!-- end form-group -->
-              <div class="form-group col-12">
-                <input type="submit" value="SEND MESSAGE">
-              </div>
-              <!-- end form-group -->
-            </div>
+
+            </form>
             <!-- end row inner -->
           </div>
           <!-- end contact-form -->
@@ -244,11 +249,8 @@
     <!-- end container -->
   </section>
   <!-- end content-section -->
-  <div class="google-maps">
-    <iframe
-      src="../maps/embed.html?pb=!1m18!1m12!1m3!1d2483.347500897131!2d-0.13080758422975197!3d51.50684040221758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2zTG9uZHJhLCBCaXJsZcWfaWsgS3JhbGzEsWs!5e0!3m2!1str!2str!4v1599044515207!5m2!1str!2str"
-      frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-  </div>
+  <div id="map"></div>
+
   <!-- end google-maps -->
   <footer class="footer">
     <div class="container">
@@ -256,7 +258,10 @@
         <!-- end col-4 -->
         <div class="col-12">
           <div class="footer-bottom"> <span>Copyright ©
-              <script type="text/javascript">var year = new Date(); document.write(year.getFullYear());</script> Geeks
+              <script type="text/javascript">
+                var year = new Date();
+                document.write(year.getFullYear());
+              </script> Geeks
               Logistics
             </span> <span>Site created
               by <a href="genesiskrane.online">Genesis Krane</a></span> </div>
@@ -279,6 +284,23 @@
   <script src="js/imagesloaded.pkgd.min.js"></script>
   <script src="js/isotope.min.js"></script>
   <script src="js/scripts.js"></script>
+  <script>
+    let map;
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: {
+          lat: -34.397,
+          lng: 150.644
+        },
+        zoom: 8,
+      });
+    }
+  </script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwrLuu_lsYWyNb_JzEIS6hH8tr1NFwhK4&callback=initMap&libraries=&v=weekly"
+    async>
+  </script>
 </body>
 
 </html>
