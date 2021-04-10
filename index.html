@@ -46,6 +46,33 @@
   <link rel="stylesheet" href="css/fancybox.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="text/x-template" id="modal-template">
+      <transition name="modal">
+        <div class="modal-mask">
+          <div class="modal-wrapper" @click="$emit('close')">
+            <div class="modal-container" @click.stop>
+
+             
+
+              <div class="modal-body">
+                <slot name="body">
+                  default body
+                </slot>
+              </div>
+
+            
+            </div>
+          </div>
+        </div>
+      </transition>
+    </script>
 </head>
 
 <body>
@@ -205,7 +232,7 @@
     <!-- end container -->
   </div>
   <!-- end section-note -->
-  <section class="content-section no-top-spacing">
+  <section class="content-section no-top-spacing" id="app">
     <div class="container">
       <div class="row">
         <div class="col-lg-5">
@@ -221,10 +248,144 @@
 
 
               <div class="form-group">
-                <input type="text" placeholder="Shipping Number">
+                <input type="text" placeholder="Shipping Number" v-model="trackid">
               </div>
               <div class="form-group">
-                <button type="submit"><i class="lni lni-search-alt"></i> SEARCH</button>
+                <button type="submit" @click="showModal = true; gon()"><i class="lni lni-search-alt"></i>
+                  SEARCH</button>
+                <modal v-if="showModal" @close="showModal = false">
+                  <!--
+      you can use custom content here to overwrite
+      default content
+    -->
+                  <div slot="body">
+                    <div  v-if="TrackidTrue">
+                      <table style="width: 100%">
+                        <thead>
+                          <tr>
+                            <th colspan="2" class="font-weight-bold text-title text-uppercase">shippers information</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr v-if="chunk.details.senderName">
+                            <td>Name:</td>
+                            <td>{{ chunk.details.senderName }}</td>
+                          </tr>
+                          <tr v-if="chunk.details.senderEmail">
+                            <td>Email:</td>
+                            <td>{{ chunk.details.senderEmail }}</td>
+                          </tr>
+                        </tbody>
+
+                      </table>
+                      <table style="width: 100%">
+                        <thead>
+                          <tr>
+                            <th colspan="2" class="font-weight-bold text-title text-uppercase"> reciever's information
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr v-if="chunk.details.receiverName">
+                            <td>Name:</td>
+                            <td>{{ chunk.details.receiverName }}</td>
+                          </tr>
+                          <tr v-if="chunk.details.receiverAddress">
+                            <td>Address:</td>
+                            <td>
+                              {{ chunk.details.receiverAddress }}
+                            </td>
+                          </tr>
+                          <tr v-if="chunk.details.receiverPhone">
+                            <td>Phone:</td>
+                            <td>{{ chunk.details.receiverPhone }}</td>
+                          </tr>
+                          <tr v-if="chunk.details.receiverEmail">
+                            <td>Email:</td>
+                            <td>{{ chunk.details.receiverEmail }}</td>
+                          </tr>
+                        </tbody>
+
+                      </table>
+                      <table style="width: 100%">
+                        <thead>
+                          <tr>
+                            <th colspan="2" class="font-weight-bold text-title text-uppercase"> Package information</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr v-if=" chunk.details.origin">
+                            <td>Origin:</td>
+                            <td>{{ chunk.details.origin }}</td>
+                          </tr>
+                          <tr v-if=" chunk.details.description ">
+                            <td>Description:</td>
+                            <td>{{ chunk.details.description }}</td>
+                          </tr>
+                          <tr v-if="chunk.details.destination ">
+                            <td>Destination:</td>
+                            <td>{{ chunk.details.destination }}</td>
+                          </tr>
+                          <tr v-if=" chunk.details.weight ">
+                            <td>Weight:</td>
+                            <td>{{ chunk.details.weight }}</td>
+                          </tr>
+                          <tr v-if="chunk.details.refNum">
+                            <td>Reference Number:</td>
+                            <td>{{ chunk.details.refNum }}</td>
+                          </tr>
+                          <tr v-if="dateConverter(chunk.details.sentDate) !== 'Invalid date'">
+                            <td>Delivery Date:</td>
+                            <td>
+                              {{
+                              dateConverter(chunk.details.sentDate)
+                              }}
+                            </td>
+                          </tr>
+                          <tr v-if="timeConverter(chunk.details.sentDate) !== 'Invalid date'">
+                            <td>Pick Up Time:</td>
+                            <td>
+                              {{
+                              timeConverter(chunk.details.sentDate)
+                              }}
+                            </td>
+                          </tr>
+                        </tbody>
+
+                      </table>
+                      <table style="width: 100%">
+                        <thead>
+                          <tr>
+                            <th colspan="2" class="font-weight-bold text-title text-uppercase">History</th>
+                          </tr>
+                        </thead>
+                        <tbody v-for="(history, i) in chunk.history" :key="i" style="border-bottom: 1px solid #000;">
+                          <tr v-if="fullDateTime(history.dateTime) !== 'Invalid date'">
+                            <td>Date And Time:</td>
+                            <td>
+                              {{ fullDateTime(history.dateTime) }}
+                            </td>
+                          </tr>
+                          <tr v-if="history.location">
+                            <td>Location:</td>
+                            <td>{{ history.location }}</td>
+                          </tr>
+                          <tr v-if="history.status">
+                            <td>Status:</td>
+                            <td>{{ history.status }}</td>
+                          </tr>
+
+                        </tbody>
+
+                      </table>
+                    </div>
+                    <div v-if="notTrackid"><h1>Track Id Not Found</h1></div>
+                    <div  v-if="NetworkError">
+                      <h1>                            You Seem To Be Offline</h1>
+                    </div>
+
+                  </div>
+                </modal>
               </div>
 
             </div>
@@ -587,10 +748,12 @@
       <div class="row">
         <!-- end col-4 -->
         <div class="col-12">
-          <div class="footer-bottom"> <span>Copyright © <script type="text/javascript">
+          <div class="footer-bottom"> <span>Copyright ©
+              <script type="text/javascript">
                 var year = new Date();
                 document.write(year.getFullYear());
-              </script> Geeks Logistics </span> <span>Site created
+              </script> Geeks Logistics
+            </span> <span>Site created
               by <a href="genesiskrane.online">Genesis Krane</a></span> </div>
           <!-- end footer-bottom -->
         </div>
@@ -602,6 +765,7 @@
   </footer>
   <!-- end footer -->
 
+
   <!-- JS FILES -->
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -611,6 +775,11 @@
   <script src="js/imagesloaded.pkgd.min.js"></script>
   <script src="js/isotope.min.js"></script>
   <script src="js/scripts.js"></script>
+  <script src="js/moment.js"></script>
+
+  <script src="js/script.js"></script>
+
+
 </body>
 
 </html>
