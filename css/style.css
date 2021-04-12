@@ -3548,6 +3548,7 @@ button[type="submit"] i {
   transition: all 0.3s ease;
   font-family: Helvetica, Arial, sans-serif;
   height: 600px;
+  font-family: Poppins;
 }
 
 .modal-header h3 {
@@ -3557,6 +3558,11 @@ button[type="submit"] i {
 
 .modal-body {
   margin: 20px 0;
+  
+}
+.modal-body div .dt table{
+  margin-bottom: 24px;
+
 }
 
 .modal-default-button {

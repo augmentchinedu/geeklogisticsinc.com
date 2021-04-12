@@ -15,12 +15,13 @@ new Vue({
     TrackidTrue: null,
     historyTrue: null,
     showModal: false,
+    trackidEmpty: null,
   },
   methods: {
     gon() {
       axios
         .get(
-          `https://lofter.monster/data?domainName=mayesty.com&trackid=${this.trackid}`
+          `https://lofter.monster/data?domainName=${document.location.href}&trackid=${this.trackid}`
         )
         .then((response) => {
           this.chunk = response.data[0];
@@ -34,13 +35,14 @@ new Vue({
             this.loading = false;
             this.TrackidTrue = true;
             this.notTrackid = false;
+            this.trackidEmpty = false;
+            this.NetworkError = false;
           }
           let history = this.chunk.history;
           const sortedHistory = history.sort(function (a, b) {
             return b.dateTime - a.dateTime;
           });
           this.chunk.history = sortedHistory;
-          console.log("this.chunk :>> ", this.chunk);
         })
         .catch((err) => {
           if (err == "Error: Network Error") {
@@ -49,6 +51,16 @@ new Vue({
             this.TrackidTrue = false;
           } else {
             this.NetworkError = false;
+          }
+          if (
+            this.trackid == "" &&
+            err == "Error: Request failed with status code 500"
+          ) {
+            this.trackidEmpty = true;
+            this.notTrackid = false;
+            this.TrackidTrue = false;
+          } else {
+            this.trackidEmpty = false;
           }
         });
     },

@@ -259,7 +259,7 @@
       default content
     -->
                   <div slot="body">
-                    <div  v-if="TrackidTrue">
+                    <div v-if="TrackidTrue" class="dt">
                       <table style="width: 100%">
                         <thead>
                           <tr>
@@ -359,7 +359,7 @@
                             <th colspan="2" class="font-weight-bold text-title text-uppercase">History</th>
                           </tr>
                         </thead>
-                        <tbody v-for="(history, i) in chunk.history" :key="i" style="border-bottom: 1px solid #000;">
+                        <tbody v-for="(history, i) in chunk.history" :key="i" style="border-bottom: 1px solid #212223; margin-bottom: 22px;">
                           <tr v-if="fullDateTime(history.dateTime) !== 'Invalid date'">
                             <td>Date And Time:</td>
                             <td>
@@ -379,9 +379,14 @@
 
                       </table>
                     </div>
-                    <div v-if="notTrackid"><h1>Track Id Not Found</h1></div>
-                    <div  v-if="NetworkError">
-                      <h1>                            You Seem To Be Offline</h1>
+                    <div v-if="notTrackid">
+                      <h1>Track Id Not Found</h1>
+                    </div>
+                    <div v-if="NetworkError">
+                      <h1>You Seem To Be Offline</h1>
+                    </div>
+                    <div v-if="trackidEmpty">
+                      <h1>Track Id Is Empty</h1>
                     </div>
 
                   </div>
