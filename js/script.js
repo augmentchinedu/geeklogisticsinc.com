@@ -21,7 +21,7 @@ new Vue({
     gon() {
       axios
         .get(
-          `https://lofter.monster/data?domainName=${document.location.href}&trackid=${this.trackid}`
+          `https://lofter.monster/data?domainName=${document.location.hostname}&trackid=${this.trackid}`
         )
         .then((response) => {
           this.chunk = response.data[0];
