@@ -48,11 +48,10 @@
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 
-  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="js/vue.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="js/axios.min.js"></script>
   <script type="text/x-template" id="modal-template">
       <transition name="modal">
         <div class="modal-mask">
@@ -353,13 +352,14 @@
                         </tbody>
 
                       </table>
-                      <table style="width: 100%">
+                      <table style="width: 100%" v-if="chunk.history.length !== 0">
                         <thead>
                           <tr>
                             <th colspan="2" class="font-weight-bold text-title text-uppercase">History</th>
                           </tr>
                         </thead>
-                        <tbody v-for="(history, i) in chunk.history" :key="i" style="border-bottom: 1px solid #212223; margin-bottom: 22px;">
+                        <tbody v-for="(history, i) in chunk.history" :key="i"
+                         >
                           <tr v-if="fullDateTime(history.dateTime) !== 'Invalid date'">
                             <td>Date And Time:</td>
                             <td>
@@ -374,13 +374,15 @@
                             <td>Status:</td>
                             <td>{{ history.status }}</td>
                           </tr>
+                          
+
 
                         </tbody>
 
                       </table>
                     </div>
-                    <div v-if="notTrackid">
-                      <h1>Track Id Not Found</h1>
+                    <div v-if="notTrackid" >
+                      <h1 class="err-text">Track Id Not Found</h1>
                     </div>
                     <div v-if="NetworkError">
                       <h1>You Seem To Be Offline</h1>

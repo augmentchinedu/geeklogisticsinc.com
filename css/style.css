@@ -83,11 +83,11 @@ img {
 /* LINKS */
 a {
   color: #212223;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 a:hover {
@@ -176,14 +176,16 @@ select {
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
   background-position: calc(100% - 30px) 34px, calc(100% - 25px) 34px, calc(100% - 3.5em) 20px;
   background-size: 5px 5px, 5px 5px, 1px 40px;
   background-repeat: no-repeat;
 }
 
 select:focus {
-  background-image: linear-gradient(45deg, gray 50%, transparent 50%), linear-gradient(135deg, transparent 50%, gray 50%), linear-gradient(to right, #ccc, #ccc);
+  background-image: linear-gradient(45deg, gray 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, gray 50%), linear-gradient(to right, #ccc, #ccc);
   background-position: calc(100% - 25px) 34px, calc(100% - 30px) 34px, calc(100% - 3.5em) 20px;
   background-size: 5px 5px, 5px 5px, 1px 40px;
   background-repeat: no-repeat;
@@ -295,11 +297,11 @@ button[type="submit"] i {
   width: 100%;
   height: 72px;
   text-align: center;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .yes-no .switch span {
   position: absolute;
@@ -309,23 +311,23 @@ button[type="submit"] i {
   left: 0;
   background: #fed300;
   font-weight: 600;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .yes-no label {
   cursor: pointer;
   line-height: 72px;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   font-weight: 600;
 }
-.yes-no label[for=yes] {
+.yes-no label[for="yes"] {
   position: absolute;
   z-index: 1;
   left: 0px;
@@ -334,7 +336,7 @@ button[type="submit"] i {
   margin: 0;
   color: #fff;
 }
-.yes-no label[for=no] {
+.yes-no label[for="no"] {
   position: absolute;
   width: 50%;
   height: 100%;
@@ -343,7 +345,7 @@ button[type="submit"] i {
   color: #fff;
   margin: 0;
 }
-.yes-no input[type=radio] {
+.yes-no input[type="radio"] {
   display: none;
 }
 .yes-no #no:checked ~ .switch {
@@ -355,11 +357,11 @@ button[type="submit"] i {
 .yes-no #no:checked ~ .switch span:after {
   background: none;
 }
-.yes-no #yes:checked ~ .switch label[for=yes] {
+.yes-no #yes:checked ~ .switch label[for="yes"] {
   color: #212223;
   font-weight: 600;
 }
-.yes-no #no:checked ~ .switch label[for=no] {
+.yes-no #no:checked ~ .switch label[for="no"] {
   color: #212223;
 }
 
@@ -369,7 +371,8 @@ button[type="submit"] i {
   padding: 0;
 }
 
-.odometer.odometer-auto-theme, .odometer.odometer-theme-car {
+.odometer.odometer-auto-theme,
+.odometer.odometer-theme-car {
   padding: 0 !important;
 }
 
@@ -381,11 +384,13 @@ button[type="submit"] i {
   left: 0 !important;
 }
 
-.odometer.odometer-auto-theme .odometer-digit, .odometer.odometer-theme-car .odometer-digit {
+.odometer.odometer-auto-theme .odometer-digit,
+.odometer.odometer-theme-car .odometer-digit {
   padding: 0;
 }
 
-.odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner, .odometer.odometer-theme-car .odometer-digit .odometer-digit-inner {
+.odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner,
+.odometer.odometer-theme-car .odometer-digit .odometer-digit-inner {
   left: 0;
 }
 
@@ -475,10 +480,10 @@ button[type="submit"] i {
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: .25s ease-in-out;
-  -moz-transition: .25s ease-in-out;
-  -o-transition: .25s ease-in-out;
-  transition: .25s ease-in-out;
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 .hamburger-menu span:nth-child(1) {
@@ -541,16 +546,16 @@ button[type="submit"] i {
   right: 0;
   top: 0;
   background: #fed300;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .preloader img {
   height: 50px;
   display: inline-block;
-  animation: fadeup 0.30s;
+  animation: fadeup 0.3s;
 }
 
 .page-loaded .preloader {
@@ -576,11 +581,11 @@ button[type="submit"] i {
   left: 0;
   bottom: 0;
   background: #fed300;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .page-transition.active {
   height: 100%;
@@ -888,11 +893,11 @@ button[type="submit"] i {
   display: inline-block;
   font-weight: 600;
   font-size: 14px;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .navbar .inner .custom-menu ul li a:hover {
   color: #fed300;
@@ -917,11 +922,11 @@ button[type="submit"] i {
   display: inline-block;
   font-weight: 600;
   font-size: 14px;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .navbar .inner .site-menu ul li a:hover {
   color: #fed300;
@@ -943,11 +948,11 @@ button[type="submit"] i {
   padding: 0 40px;
   font-weight: 600;
   font-size: 14px;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .navbar .inner .navbar-button a:hover {
   opacity: 0.9;
@@ -1037,10 +1042,10 @@ button[type="submit"] i {
 .slider .main-slider .controls .button-prev circle {
   stroke-dasharray: 315;
   stroke-dashoffset: 315;
-  transition: stroke-dashoffset .5s;
+  transition: stroke-dashoffset 0.5s;
 }
 .slider .main-slider .controls .button-prev svg {
-  transition: transform .3s;
+  transition: transform 0.3s;
   position: absolute;
   left: 0;
   top: 0;
@@ -1070,10 +1075,10 @@ button[type="submit"] i {
 .slider .main-slider .controls .button-next circle {
   stroke-dasharray: 315;
   stroke-dashoffset: 315;
-  transition: stroke-dashoffset .5s;
+  transition: stroke-dashoffset 0.5s;
 }
 .slider .main-slider .controls .button-next svg {
-  transition: transform .3s;
+  transition: transform 0.3s;
   position: absolute;
   left: 0;
   top: 0;
@@ -1224,14 +1229,14 @@ button[type="submit"] i {
   font-size: 14px;
   font-weight: 600;
   padding: 0 50px;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .custom-button:hover {
-  opacity: 0.90;
+  opacity: 0.9;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -1262,11 +1267,11 @@ button[type="submit"] i {
 .video-thumb img {
   width: 100%;
   display: block;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .video-thumb a {
   width: 0;
@@ -1279,11 +1284,11 @@ button[type="submit"] i {
   bottom: 50px;
   float: left;
   text-indent: -99999px;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .video-thumb a:hover {
   border-color: transparent transparent transparent #fed300;
@@ -1528,11 +1533,11 @@ button[type="submit"] i {
   display: flex;
   flex-wrap: wrap;
   border: 1px solid #cecece;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   position: relative;
 }
 .icon-box:before {
@@ -1546,11 +1551,11 @@ button[type="submit"] i {
   background-size: auto 11px;
   z-index: -1;
   opacity: 0;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .icon-box .inner {
   width: 100%;
@@ -1636,11 +1641,11 @@ button[type="submit"] i {
   width: 100%;
   float: left;
   opacity: 0.6;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .solution-box figure figcaption {
   width: 100%;
@@ -1653,11 +1658,11 @@ button[type="submit"] i {
   padding: 30px;
 }
 .solution-box figure figcaption * {
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .solution-box figure figcaption small {
   width: 100%;
@@ -1752,11 +1757,11 @@ button[type="submit"] i {
   padding-left: 40px;
   background: #212223;
   color: #fff;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .side-services ul li a:hover {
   text-decoration: none;
@@ -1775,11 +1780,11 @@ button[type="submit"] i {
   position: relative;
   padding-left: 10px;
   opacity: 0;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .side-services ul li a i:after {
   content: "";
@@ -1862,7 +1867,7 @@ button[type="submit"] i {
 }
 
 /* COUNTER BOX */
-.col-lg-3:nth-child(2n+2) .counter-box {
+.col-lg-3:nth-child(2n + 2) .counter-box {
   margin-top: 100px;
 }
 
@@ -1925,11 +1930,11 @@ button[type="submit"] i {
   border: 1px solid #cecece;
   margin-top: 30px;
   position: relative;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .service-box:before {
   content: "";
@@ -1942,11 +1947,11 @@ button[type="submit"] i {
   background-size: auto 11px;
   z-index: -1;
   opacity: 0;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .service-box .inner {
   width: 100%;
@@ -2427,11 +2432,11 @@ button[type="submit"] i {
   text-align: center;
   margin-top: 50px;
   position: relative;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   z-index: 1;
 }
 .team-member:before {
@@ -2445,11 +2450,11 @@ button[type="submit"] i {
   background-size: auto 11px;
   z-index: -1;
   opacity: 0;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .team-member .inner {
   width: 100%;
@@ -2514,11 +2519,11 @@ button[type="submit"] i {
 .logo-item img {
   width: 100%;
   display: inline-block;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .logo-item:hover img {
   opacity: 0.4;
@@ -2535,11 +2540,11 @@ button[type="submit"] i {
   background: #fed300;
 }
 .gallery-item * {
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .gallery-item img {
   width: 100%;
@@ -2547,21 +2552,21 @@ button[type="submit"] i {
 }
 .gallery-item:before {
   content: "\eb7b";
-  font-family: 'LineIcons';
+  font-family: "LineIcons";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   font-size: 24px;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   opacity: 0;
 }
 .gallery-item:hover img {
-  opacity: 0.10;
+  opacity: 0.1;
   transform: scale(1.05);
 }
 .gallery-item:hover:before {
@@ -2703,11 +2708,11 @@ button[type="submit"] i {
 .news-box .content h3 a {
   display: block;
   color: #212223;
-  -webkit-transition: all .35s ease-in-out;
-  -moz-transition: all .30s ease-in-out;
-  -ms-transition: all .30s ease-in-out;
-  -o-transition: all .30s ease-in-out;
-  transition: all .30s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .news-box .content h3 a:hover {
   color: #fed300;
@@ -3187,7 +3192,7 @@ button[type="submit"] i {
     margin-left: 0;
   }
 
-  .col-lg-3:nth-child(2n+2) .counter-box {
+  .col-lg-3:nth-child(2n + 2) .counter-box {
     margin-top: 15px;
   }
 
@@ -3509,14 +3514,12 @@ button[type="submit"] i {
   }
 }
 
-
-
 #map {
-	width: 100%;
-	height: 600px;
-	display: flex;
-	flex-wrap: wrap;
-	overflow: visible;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: visible;
 }
 
 .modal-mask {
@@ -3534,6 +3537,7 @@ button[type="submit"] i {
 .modal-wrapper {
   display: table-cell;
   vertical-align: middle;
+
   /* overflow: auto; */
 }
 
@@ -3541,13 +3545,16 @@ button[type="submit"] i {
   width: 50%;
   overflow: auto;
   margin: 0px auto;
-  padding: 20px 30px;
+
+  padding: 10px;
   background-color: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
   font-family: Helvetica, Arial, sans-serif;
-  height: 600px;
+  overflow-y: auto;
+
+  max-height: 600px;
   font-family: Poppins;
 }
 
@@ -3557,12 +3564,10 @@ button[type="submit"] i {
 }
 
 .modal-body {
-  margin: 20px 0;
-  
+  /* margin: 20px 0; */
 }
-.modal-body div .dt table{
+.modal-body div .dt table {
   margin-bottom: 24px;
-
 }
 
 .modal-default-button {
@@ -3590,4 +3595,30 @@ button[type="submit"] i {
 .modal-leave-active .modal-container {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+tbody::before {
+  content: "";
+  display: block;
+  height: 15px;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.err-text {
+  text-align: center;
+  /* padding: 8px; */
 }
