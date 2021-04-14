@@ -16,6 +16,7 @@ $to = "support@geeklogisticsinc.com";
 $subject = "New Quotation";
 $headers = "From: noreply@geeklogisticsinc.com";
 mail($to,$subject,$txt,$headers);
+header("location: index.html?sent=true")
 ?> 
 
 

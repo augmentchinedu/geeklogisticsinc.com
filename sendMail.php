@@ -16,6 +16,8 @@ $to = "support@geeklogisticsinc.com";
 $subject = "Contact Message";
 $headers = "From: noreply@geeklogisticsinc.com";
 mail($to,$subject,$txt,$headers);
+header("location: contact.html?sent=true")
+
 ?> 
 
 

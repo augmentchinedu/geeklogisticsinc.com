@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -65,7 +65,7 @@
               alt="Image"></a></figure>
         <h6 class="widget-title">CONTACT INFO</h6>
         <address class="address">
-          <p>+23 354 683 9958<br>
+          <p>
             <a href="mailto:support@geeklogisticsinc.com">support@geeklogisticsinc.com</a>
           </p>
         </address>
@@ -92,7 +92,6 @@
   <!-- end side-widget -->
   <div class="topbar">
     <div class="container">
-      <div class="phone">Call Us Now: <a href="tel:+233546839958"> +23 354 683 9958 </a></div>
       <!-- end phone -->
       <div class="email"> Email: <a href="mailto:support@geeklogisticsinc.com">support@geeklogisticsinc.com</a> </div>
       <!-- end email -->
@@ -125,7 +124,7 @@
         <!-- end site-menu -->
         <div class="hamburger-menu"> <span></span> <span></span> <span></span> </div>
         <!-- end hamburger-menu -->
-        <div class="navbar-button"> <a href="index.html#track">TRACK</a> </div>
+        <div class="navbar-button"> <a href="#">TRACK</a> </div>
         <!-- end navbar-button -->
       </div>
       <!-- end inner -->
@@ -274,6 +273,31 @@
     <!-- end container -->
   </footer>
   <!-- end footer -->
+  <!-- Button trigger modal -->
+  <button type="button" id="submitted" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"
+    style="display: none;">
+    Launch demo modal
+  </button>
+
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header t-center">
+          <h5 class="modal-title" id="exampleModalLongTitle">Message Sent</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Your message has been sent successfully. We would get in contact with you shortly.
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
   <!-- JS FILES -->
   <script src="js/jquery.min.js"></script>
@@ -301,6 +325,15 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwrLuu_lsYWyNb_JzEIS6hH8tr1NFwhK4&callback=initMap&libraries=&v=weekly"
     async>
   </script>
+  <script>
+    var url = new URL(window.location.href);
+    var params = new URLSearchParams(url.search);
+    console.log(url.search);
+    if (params.has('sent') == true) {
+      document.getElementById('submitted').click()
+    }
+  </script>
+
 </body>
 
 </html>

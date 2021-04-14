@@ -3622,3 +3622,8 @@ tr:nth-child(even) {
   text-align: center;
   /* padding: 8px; */
 }
+@media only screen and (max-width: 600px) {
+  .modal-container {
+    width: 80%;
+  }
+}
