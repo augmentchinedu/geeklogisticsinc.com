@@ -53,7 +53,7 @@
 
   <script src="js/axios.min.js"></script>
   <script type="text/x-template" id="modal-template">
-      <transition name="modal">
+    <transition name="modal">
         <div class="modal-mask">
           <div class="modal-wrapper" @click="$emit('close')">
             <div class="modal-container" @click.stop>
@@ -91,7 +91,7 @@
               alt="Image"></a></figure>
         <h6 class="widget-title">CONTACT INFO</h6>
         <address class="address">
-          <p><a href="tel:+233546839958">+23 354 683 9958</a><br>
+          <p><br>
             <a href="mailto:support@geeklogisticsinc.com">support@geeklogisticsinc.com</a>
           </p>
         </address>
@@ -118,7 +118,7 @@
   <!-- end side-widget -->
   <div class="topbar">
     <div class="container">
-      <div class="phone">Call Us Now: <a href="tel:+233546839958">+23 354 683 9958</a></div>
+
       <!-- end phone -->
       <div class="email"> Email: <a href="mailto:support@geeklogisticsinc.com">support@geeklogisticsinc.com</a> </div>
       <!-- end email -->
@@ -358,8 +358,7 @@
                             <th colspan="2" class="font-weight-bold text-title text-uppercase">History</th>
                           </tr>
                         </thead>
-                        <tbody v-for="(history, i) in chunk.history" :key="i"
-                         >
+                        <tbody v-for="(history, i) in chunk.history" :key="i">
                           <tr v-if="fullDateTime(history.dateTime) !== 'Invalid date'">
                             <td>Date And Time:</td>
                             <td>
@@ -374,14 +373,14 @@
                             <td>Status:</td>
                             <td>{{ history.status }}</td>
                           </tr>
-                          
+
 
 
                         </tbody>
 
                       </table>
                     </div>
-                    <div v-if="notTrackid" >
+                    <div v-if="notTrackid">
                       <h1 class="err-text">Track Id Not Found</h1>
                     </div>
                     <div v-if="NetworkError">
@@ -431,25 +430,28 @@
   <section id="services" class="content-section no-spacing">
     <div class="tab-content">
       <ul class="tab-nav">
-        <li class="active"><a href="#tab02">Air Freight</a></li>
-        <li><a href="#tab03">Courier Services</a></li>
-        <li><a href="#tab04">Clearing & Forwarding</a></li>
-        <li><a href="#tab05">Sea Freight</a></li>
-        <li><a href="#tab06">Shop-For-You Service</a></li>
+        <li class="active"><a href="#tab01">Air Freight</a></li>
+        <li><a href="#tab02">Courier Services</a></li>
+        <li><a href="#tab03">Clearing & Forwarding</a></li>
+        <li><a href="#tab04">Sea Freight</a></li>
+        <li><a href="#tab05">Shop-For-You Service</a></li>
       </ul>
       <div id="tab01" class="tab-item active-item">
         <div class="tab-inner">
           <figure><img src="images/tab-image01.jpg" alt="Image"></figure>
           <div class="content">
-            <h3>Postal</h3>
-            <p>The retail industry is not only shaped by the quality
-              of services and goods, but also by economic trends
-              that are beyond an organization's control. In order to
-              maximize shareholder value, retailers constantly
-              endeavor to optimize their service and the flow of
-              goods from the supply chain to the store. </p>
-            <p> Such dynamic optimization cannot be realized
-              without proactive handling of accurate data.</p>
+            <h3>Air Freight</h3>
+            <p>
+              Geeks Logistics Air Freight services are ideal for larger shipments that may or may not require a pallet.
+              In some
+              cases, you can include other services, such as pickup, collection, delivery and customs clearance for
+              convenient shipping.
+            </p>
+            <p>Combine speed, flexibility, and value with our global airport-to-airport service available worldwide.
+              Send and receive freight worldwide, it's ideal for shipments over 150 pounds. With convenient and easy
+              shipment processing for palletized and non-palletized freight. Optional services include pickup, delivery,
+              and customs clearance.
+            </p>
           </div>
           <!-- end content -->
         </div>
@@ -460,7 +462,7 @@
         <div class="tab-inner">
           <figure><img src="images/tab-image02.jpg" alt="Image"></figure>
           <div class="content">
-            <h3>Retail</h3>
+            <h3>Courier Services</h3>
             <p>The retail industry is not only shaped by the quality
               of services and goods, but also by economic trends
               that are beyond an organization's control. In order to
@@ -479,7 +481,7 @@
         <div class="tab-inner">
           <figure><img src="images/tab-image03.jpg" alt="Image"></figure>
           <div class="content">
-            <h3>Logistics</h3>
+            <h3>Clearing & Forwarding</h3>
             <p>The retail industry is not only shaped by the quality
               of services and goods, but also by economic trends
               that are beyond an organization's control. In order to
@@ -498,7 +500,7 @@
         <div class="tab-inner">
           <figure><img src="images/tab-image04.jpg" alt="Image"></figure>
           <div class="content">
-            <h3>Ticketing</h3>
+            <h3>Sea Freight</h3>
             <p>The retail industry is not only shaped by the quality
               of services and goods, but also by economic trends
               that are beyond an organization's control. In order to
@@ -517,7 +519,7 @@
         <div class="tab-inner">
           <figure><img src="images/tab-image05.jpg" alt="Image"></figure>
           <div class="content">
-            <h3>Industrial</h3>
+            <h3>Shop-For-You Service</h3>
             <p>The retail industry is not only shaped by the quality
               of services and goods, but also by economic trends
               that are beyond an organization's control. In order to
@@ -532,25 +534,6 @@
         <!-- end tab-inner -->
       </div>
       <!-- end tab05 -->
-      <div id="tab06" class="tab-item">
-        <div class="tab-inner">
-          <figure><img src="images/tab-image06.jpg" alt="Image"></figure>
-          <div class="content">
-            <h3>Other</h3>
-            <p>The retail industry is not only shaped by the quality
-              of services and goods, but also by economic trends
-              that are beyond an organization's control. In order to
-              maximize shareholder value, retailers constantly
-              endeavor to optimize their service and the flow of
-              goods from the supply chain to the store. </p>
-            <p> Such dynamic optimization cannot be realized
-              without proactive handling of accurate data.</p>
-          </div>
-          <!-- end content -->
-        </div>
-        <!-- end tab-inner -->
-      </div>
-      <!-- end tab06 -->
 
     </div>
     <!-- end tab-content -->
